@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { facultyData } from '../data/faculty';
+import { adminData, facultyData } from '../data/faculty';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Scene3D } from '../components/ui/Scene3D';
 import gsap from 'gsap';
@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function FacultyInvite() {
   const { id } = useParams();
-  const faculty = facultyData.find(f => f.id === id);
+  const faculty = adminData.find(f => f.id === id) || facultyData.find(f => f.id === id);
   const containerRef = useRef(null);
   const [isAccepted, setIsAccepted] = useState(false);
   const [isAccepting, setIsAccepting] = useState(false);
@@ -50,7 +50,6 @@ export default function FacultyInvite() {
         <div className="container mx-auto flex justify-between items-center">
           <Link to="/" className="flex items-center gap-2 text-[10px] md:text-sm tracking-widest uppercase text-gray-400 hover:text-white transition-colors">
             <img src="/images/logo.png" alt="Logo" className="w-6 h-6 object-contain" />
-            <span>&larr; Directory</span>
           </Link>
           <div className="text-[10px] md:text-sm tracking-widest uppercase hidden md:block">
             BCA 2023-2026
@@ -77,19 +76,33 @@ export default function FacultyInvite() {
           </p>
         </motion.div>
         
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8, filter: "blur(20px)" }}
-          animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-          transition={{ duration: 1.5, ease: "easeOut", delay: 0.2 }}
-          className="flex-1 max-w-sm md:max-w-md relative group"
-        >
-          <div className={`absolute -inset-4 bg-gradient-to-tr ${faculty.theme.accent} rounded-2xl opacity-20 blur-2xl group-hover:opacity-40 transition-opacity duration-700`} />
-          <img 
-            src={faculty.image} 
-            alt={faculty.name} 
-            className="relative z-10 w-full rounded-2xl object-cover shadow-2xl border border-white/10"
-          />
-        </motion.div>
+        {faculty.image ? (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8, filter: "blur(20px)" }}
+            animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+            transition={{ duration: 1.5, ease: "easeOut", delay: 0.2 }}
+            className="flex-1 max-w-sm md:max-w-md relative group"
+          >
+            <div className={`absolute -inset-4 bg-gradient-to-tr ${faculty.theme.accent} rounded-2xl opacity-20 blur-2xl group-hover:opacity-40 transition-opacity duration-700`} />
+            <img 
+              src={faculty.image} 
+              alt={faculty.name} 
+              className="relative z-10 w-full rounded-2xl object-cover shadow-2xl border border-white/10"
+            />
+          </motion.div>
+        ) : (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8, filter: "blur(20px)" }}
+            animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+            transition={{ duration: 1.5, ease: "easeOut", delay: 0.2 }}
+            className="flex-1 max-w-sm md:max-w-md relative group"
+          >
+            <div className={`w-full aspect-square rounded-2xl bg-gradient-to-br ${faculty.theme.accent} opacity-20 relative z-10 border border-white/10 shadow-2xl flex items-center justify-center`}>
+              <div className="text-white/30 text-6xl font-light tracking-widest">{faculty.name.charAt(0)}</div>
+            </div>
+            <div className={`absolute -inset-4 bg-gradient-to-tr ${faculty.theme.accent} rounded-2xl opacity-20 blur-2xl group-hover:opacity-40 transition-opacity duration-700`} />
+          </motion.div>
+        )}
         
         <motion.div 
           className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center"
