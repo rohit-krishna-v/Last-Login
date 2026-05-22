@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { SplitText } from '../components/animations/SplitText';
 import { MagneticButton } from '../components/ui/MagneticButton';
 import { Scene3D } from '../components/ui/Scene3D';
+import { LavenderMist } from '../components/ui/LavenderMist';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -41,8 +42,11 @@ export default function Home() {
   const displayedData = activeTab === 'admin' ? adminData : facultyData;
 
   return (
-    <div ref={containerRef} className={`min-h-screen text-white overflow-hidden selection:bg-white/10 relative transition-colors duration-1000 ${activeTab === 'faculty' ? 'bg-[#1a1025]' : 'bg-[#030303]'}`}>
-      <Scene3D accentColor={activeTab === 'faculty' ? '#c084fc' : '#ffffff'} />
+    <div ref={containerRef} className={`min-h-screen text-white overflow-hidden selection:bg-white/10 relative transition-colors duration-[2000ms] ease-in-out ${activeTab === 'faculty' ? 'bg-[#080211]' : 'bg-[#030303]'}`}>
+      <LavenderMist active={activeTab === 'faculty'} />
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <Scene3D isFaculty={activeTab === 'faculty'} />
+      </div>
 
       {/* Navbar - Only Logo */}
       <nav className="fixed top-0 w-full p-4 md:p-6 z-50 glass">

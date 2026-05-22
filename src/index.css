@@ -10,6 +10,9 @@
   body {
     @apply bg-background text-foreground overflow-x-hidden selection:bg-white/20 selection:text-white antialiased;
   }
+  * {
+    cursor: none !important;
+  }
 }
 
 .glass {
@@ -29,4 +32,15 @@
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+@keyframes wave-translate {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes mist-drift {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(5%, -5%) scale(1.1); }
+  100% { transform: translate(-5%, 5%) scale(1); }
 }

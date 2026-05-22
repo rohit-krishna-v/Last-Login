@@ -136,7 +136,7 @@ export const facultyData = [
     id: "rashmi-n",
     name: "Ms. Rashmi N",
     title: "Discrete Structure",
-    image: "",
+    image: "/images/Mrs. RASHMIN.jpeg",
     theme: {
       accent: "from-purple-400 to-violet-600",
       glow: "rgba(167, 139, 250, 0.5)",
@@ -227,7 +227,7 @@ export const facultyData = [
     id: "sachindra-behera",
     name: "Mr. Sachindra Behera",
     title: "Data Analytics",
-    image: "images/MrSachindraBehera.jpeg",
+    image: "/images/MrSachindraBehera.jpeg",
     theme: {
       accent: "from-cyan-400 to-blue-500",
       glow: "rgba(34, 211, 238, 0.5)",
@@ -235,5 +235,44 @@ export const facultyData = [
     },
     message: "Thank you for helping us uncover the stories hidden within the data. Your insights have been truly invaluable.",
     quote: "Without data, you're just another person with an opinion."
+  },
+  {
+    id: "manasa-s",
+    name: "Ms. Manasa S",
+    title: "Mobile Application Development",
+    image: "/images/Ms.MANASAS.jpeg",
+    theme: {
+      accent: "from-pink-400 to-fuchsia-600",
+      glow: "rgba(232, 121, 249, 0.5)",
+      text: "text-pink-400"
+    },
+    message: "Thank you for guiding us into the world of mobile technology. We carry your lessons in the palm of our hands.",
+    quote: "Mobile is becoming not only the new digital hub, but also the bridge to the physical world."
+  },
+  {
+    id: "anubin-binoy",
+    name: "Ms. Anubin Binoy",
+    title: "Machine Learning",
+    image: "/images/Ms.ANUBINBINOY.jpeg",
+    theme: {
+      accent: "from-violet-400 to-purple-600",
+      glow: "rgba(139, 92, 246, 0.5)",
+      text: "text-violet-400"
+    },
+    message: "Your teachings have trained our minds just like we train models. Thank you for making intelligence artificial but the learning real.",
+    quote: "Machine learning is the last invention that humanity will ever need to make."
+  },
+  {
+    id: "hari-priya-n",
+    name: "Dr. Hari Priya N",
+    title: "Software Testing",
+    image: "/images/Dr.HARIPRIYAN.jpeg",
+    theme: {
+      accent: "from-rose-400 to-red-600",
+      glow: "rgba(244, 63, 94, 0.5)",
+      text: "text-rose-400"
+    },
+    message: "Your meticulous approach to quality assurance taught us that the difference between good and great is in the details.",
+    quote: "Testing leads to failure, and failure leads to understanding."
   }
 ];

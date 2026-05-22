@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { adminData, facultyData } from '../data/faculty';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Scene3D } from '../components/ui/Scene3D';
+import { LavenderMist } from '../components/ui/LavenderMist';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -10,6 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function FacultyInvite() {
   const { id } = useParams();
+  const isFaculty = facultyData.some(f => f.id === id);
   const faculty = adminData.find(f => f.id === id) || facultyData.find(f => f.id === id);
   const containerRef = useRef(null);
   const [isAccepted, setIsAccepted] = useState(false);
@@ -43,8 +45,9 @@ export default function FacultyInvite() {
   };
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-[#030303] text-white selection:bg-white/10 relative overflow-hidden">
-      <Scene3D accentColor={faculty.theme.glow} />
+    <div ref={containerRef} className={`min-h-screen text-white selection:bg-white/10 relative overflow-hidden transition-colors duration-[2000ms] ease-in-out ${isFaculty ? 'bg-[#080211]' : 'bg-[#030303]'}`}>
+      <LavenderMist active={isFaculty} />
+      <Scene3D isFaculty={isFaculty} />
 
       <nav className="fixed top-0 w-full p-4 md:p-6 z-50 glass">
         <div className="container mx-auto flex justify-between items-center">
