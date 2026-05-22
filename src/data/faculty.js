@@ -63,5 +63,18 @@ export const facultyData = [
     },
     message: "Behind every seamless experience is your silent, steadfast support. We appreciate your invaluable contributions.",
     quote: "Integrity is doing the right thing, even when no one is watching."
+  },
+  {
+    id: "saranya-chandrasekaran",
+    name: "Ms. Saranya Chandrasekaran",
+    title: "Program In Charge",
+    image: "/images/saranya_chandrasekaran.jpeg",
+    theme: {
+      accent: "from-pink-400 to-rose-600",
+      glow: "rgba(244, 114, 182, 0.5)",
+      text: "text-pink-400"
+    },
+    message: "Orchestrating our journey with precision and care. Your guidance has been the compass to our success.",
+    quote: "Vision without execution is just hallucination."
   }
 ];

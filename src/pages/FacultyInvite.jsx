@@ -46,19 +46,20 @@ export default function FacultyInvite() {
     <div ref={containerRef} className="min-h-screen bg-[#030303] text-white selection:bg-white/10 relative overflow-hidden">
       <Scene3D accentColor={faculty.theme.glow} />
 
-      <nav className="fixed top-0 w-full p-6 z-50 glass">
+      <nav className="fixed top-0 w-full p-4 md:p-6 z-50 glass">
         <div className="container mx-auto flex justify-between items-center">
-          <Link to="/" className="text-xs md:text-sm tracking-widest uppercase text-gray-400 hover:text-white transition-colors">
-            &larr; Back to Directory
+          <Link to="/" className="flex items-center gap-2 text-[10px] md:text-sm tracking-widest uppercase text-gray-400 hover:text-white transition-colors">
+            <img src="/images/logo.png" alt="Logo" className="w-6 h-6 object-contain" />
+            <span>&larr; Directory</span>
           </Link>
-          <div className="text-xs md:text-sm tracking-widest uppercase hidden md:block">
+          <div className="text-[10px] md:text-sm tracking-widest uppercase hidden md:block">
             BCA 2023-2026
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="relative z-10 min-h-screen flex flex-col md:flex-row items-center justify-center p-6 md:p-12 gap-12">
+      <section className="relative z-10 min-h-screen flex flex-col md:flex-row items-center justify-center p-6 md:p-12 gap-12 pt-32 md:pt-12">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}

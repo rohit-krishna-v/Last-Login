@@ -39,7 +39,10 @@ export default function Home() {
       {/* Navbar */}
       <nav className="fixed top-0 w-full p-4 md:p-6 z-50 glass">
         <div className="container mx-auto flex justify-between items-center">
-          <div className="text-lg md:text-xl font-bold tracking-tighter">LAST<span className="font-light">LOGIN</span></div>
+          <div className="flex items-center gap-3">
+            <img src="/images/logo.png" alt="Last Login Logo" className="w-8 h-8 md:w-10 md:h-10 object-contain" />
+            <div className="text-lg md:text-xl font-bold tracking-tighter">LAST<span className="font-light">LOGIN</span></div>
+          </div>
           <div className="text-[10px] md:text-xs tracking-widest uppercase text-gray-400">
             BCA 2023-2026
           </div>
